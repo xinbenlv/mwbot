@@ -20,14 +20,12 @@ async function main() {
 
 
     try {
-        await bot.edit(`User:${botUserName}/sandbox/HelloWorld`,
+        let response = await bot.edit(`User:${botUserName}/sandbox/HelloWorld`,
             `Hello World! Congrats, you have created a bot edit. Now head to [[WP:Bots]] to find information on how to get your bot approved and running!`,
-            `Edit from a bot called [[User:${botUserName}]] built with #mwbot`).then((response) => {
+            `Edit from a bot called [[User:${botUserName}]] built with #mwbot`);
             console.log(`Success`, response);
-            console.log(`Now visit on your browser to see your edit:
-    ${baseUrl}/wiki/User:${botUserName}/sandbox/HelloWorld`);
+            console.log(`Now visit on your browser to see your edit:  ${baseUrl}/wiki/User:${botUserName}/sandbox/HelloWorld`);
             // Success
-        });
     } catch (err) {
         console.warn(`Error`, err);
     }
